@@ -1,0 +1,14 @@
+===========================train_params===========================
+model_name:MLDA
+python:python3.7
+gpu_list:0
+use_gpu:True
+##
+norm_train:train.py --num_epochs 1 --data_path data/lite_train_data --depth_hint_path data/lite_train_data/depth_hints --split eigen_lite
+##
+===========================eval_params===========================
+eval:null/
+null:null
+===========================infer_params===========================
+infer_export:export.py --load_weights_folder log_train/models/best_weights  --save_dir inference/tipc
+inference:inference.py --infer_files_dir inference/tipc
